@@ -1,7 +1,3 @@
-/**
- * Carga el sidebar.html y lo inyecta en el placeholder de la página.
- * Luego, establece el elemento de menú activo automáticamente.
- */
 function loadSidebar() {
     // 1. Obtener la ruta del archivo actual (por ejemplo, "index.html" o "nueva_solicitud.html")
     const path = window.location.pathname;

@@ -1,6 +1,4 @@
-/* ========================================= */
-/* ESTILOS GENERALES Y DE DISEÑO (LAYOUT)    */
-/* ========================================= */
+/* ESTILOS BASE Y LAYOUT GENERAL */
 
 body {
     font-family: Arial, sans-serif;
@@ -24,14 +22,10 @@ body {
 .content-area {
     display: flex;
     flex-grow: 1;
-    /* --- CORRECCIÓN CLAVE --- */
-    align-items: stretch; /* Asegura que los hijos se estiren para cubrir el espacio disponible */
-    /* ------------------------ */
+    align-items: stretch;
 }
 
-/* ========================================= */
-/* ESTILOS DEL ENCABEZADO (HEADER)           */
-/* ========================================= */
+/* ENCABEZADO Y LOGO */
 
 .header {
     background-color: #ff5722;
@@ -59,18 +53,14 @@ body {
     font-weight: 500;
 }
 
-/* ========================================= */
-/* ESTILOS DE LA BARRA LATERAL (SIDEBAR)     */
-/* ========================================= */
+/* BARRA LATERAL (SIDEBAR) */
 
 .sidebar {
     width: 250px;
     background-color: #ff5722;
     padding: 20px 0;
     color: white;
-    /* --- CORRECCIÓN ADICIONAL --- */
-    height: 100%; /* Fuerza a que ocupe el 100% de la altura de su contenedor flex */
-    /* ----------------------------- */
+    height: 100%;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -106,9 +96,7 @@ body {
     font-weight: bold;
 }
 
-/* ========================================= */
-/* ESTILOS DEL CONTENIDO PRINCIPAL           */
-/* ========================================= */
+/* CONTENIDO PRINCIPAL (MAIN) */
 
 .main-content {
     flex-grow: 1;
@@ -119,7 +107,7 @@ body {
     overflow-y: auto;
 }
 
-/* --- ESTILOS COMPARTIDOS POR FORMULARIOS Y PERFIL --- */
+/* --- Compartidos (Formularios y Botones) --- */
 .form-group {
     margin-bottom: 15px;
 }
@@ -167,7 +155,7 @@ body {
     background-color: #e64a19;
 }
 
-/* --- ESTILOS PARA INICIO (index.html) --- */
+/* --- VISTA INICIO --- */
 .welcome-message {
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 8px;
@@ -187,7 +175,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- ESTILOS PARA FORMULARIO (nueva_solicitud.html) --- */
+/* --- VISTA FORMULARIO (Nueva Solicitud) --- */
 .form-card {
     background-color: white;
     padding: 30px;
@@ -219,7 +207,7 @@ legend {
     padding: 0 10px;
 }
 
-/* --- ESTILOS PARA LISTA (lista_solicitudes.html) --- */
+/* --- VISTA LISTA DE SOLICITUDES --- */
 .content-card {
     background-color: white;
     padding: 30px;
@@ -345,9 +333,7 @@ td {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* ========================================= */
-/* ESTILOS PARA PERFIL (perfil.html) */
-/* ========================================= */
+/* VISTA PERFIL */
 
 .profile-card {
     background-color: white;
@@ -420,9 +406,7 @@ td {
     padding: 12px 30px;
 }
 
-/* ========================================= */
-/* ESTILOS PARA LOGIN (login.html) */
-/* ========================================= */
+/* VISTA LOGIN */
 
 .login-page-body {
     background: linear-gradient(135deg, #ff9800, #ff5722);
@@ -498,9 +482,7 @@ td {
     margin-top: 0;
 }
 
-/* ========================================= */
-/* ESTILOS RESPONSIVOS (MEDIA QUERIES)       */
-/* ========================================= */
+/* RESPONSIVO */
 
 @media (max-width: 768px) {
     body {
