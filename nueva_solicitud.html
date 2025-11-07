@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Solicitud - Gestión de Solicitudes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="header">
+            <div class="logo-container">
+                <img src="https://selectra.com.pe/sites/selectra.com.pe/files/styles/_default/public/inline-images/win-xs.png.webp" alt="Logo de WIN" style="max-height: 100%; max-width: 100%;">
+            </div>
+            <span>EL INTERNET DE LOS WINNERS</span>
+            <h1>Gestión de Solicitudes de Baja</h1>
+        </header>
+
+        <div class="content-area">
+            
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li class="active-item"><a href="nueva_solicitud.html">Nueva solicitud</a></li>
+                    <li><a href="#">Lista de solicitudes</a></li>
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="#">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+
+            <main class="main-content">
+                
+                <div class="form-card">
+                    <h2>Nueva Solicitud de Baja de Servicio</h2>
+                    <p>Por favor, completa los siguientes campos para iniciar tu proceso de baja.</p>
+                    
+                    <form id="solicitudBajaForm">
+                        
+                        <fieldset>
+                            <legend>Datos del Titular</legend>
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo:</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dni">DNI / RUC:</label>
+                                <input type="text" id="dni" name="dni" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="servicio">N° de Servicio / Contrato:</label>
+                                <input type="text" id="servicio" name="servicio" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Motivo y Fecha de Baja</legend>
+                            <div class="form-group">
+                                <label for="motivo">Motivo de la Solicitud:</label>
+                                <select id="motivo" name="motivo" required>
+                                    <option value="">Selecciona un motivo</option>
+                                    <option value="mudanza">Mudanza fuera de cobertura</option>
+                                    <option value="insatisfaccion">Insatisfacción con el servicio</option>
+                                    <option value="costo">Costo elevado</option>
+                                    <option value="otro">Otro (especificar)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="observaciones">Observaciones (Opcional):</label>
+                                <textarea id="observaciones" name="observaciones"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha">Fecha Deseada de Baja:</label>
+                                <input type="date" id="fecha" name="fecha" required>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="submit-button">Enviar Solicitud</button>
+                        
+                    </form>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+</body>
+</html>
