@@ -5,19 +5,19 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    min-height: 100vh;
     background-color: #f4f4f4;
 }
 
 .app-container {
     display: flex;
     flex-direction: column;
-    min-height: 600px;
+    min-height: 100vh;
     background-color: white;
-    width: 90%;
-    max-width: 1200px;
-    margin: 30px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
     overflow: hidden;
 }
 
@@ -95,7 +95,6 @@ body {
     background-color: #e64a19;
 }
 
-/* Estilo para el ítem activo en la barra lateral */
 .sidebar li.active-item a {
     background-color: #e64a19;
     font-weight: bold;
@@ -111,7 +110,55 @@ body {
     padding: 30px;
     text-align: center;
     color: white;
-    overflow-y: auto; /* Añadir scroll si el contenido es largo */
+    overflow-y: auto;
+}
+
+/* --- ESTILOS COMPARTIDOS POR FORMULARIOS Y PERFIL --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-button {
+    background-color: #ff5722;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #e64a19;
 }
 
 /* --- ESTILOS PARA INICIO (index.html) --- */
@@ -166,52 +213,6 @@ legend {
     padding: 0 10px;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.form-group input[type="text"],
-.form-group input[type="date"],
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-.submit-button {
-    background-color: #ff5722;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.submit-button:hover {
-    background-color: #e64a19;
-}
-
-
 /* --- ESTILOS PARA LISTA (lista_solicitudes.html) --- */
 .content-card {
     background-color: white;
@@ -224,13 +225,6 @@ legend {
     color: #333;
 }
 
-.content-card h2 {
-    color: #ff5722;
-    margin-top: 0;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 10px;
-}
-
 .filter-container {
     display: flex;
     flex-wrap: wrap;
@@ -239,11 +233,6 @@ legend {
     margin-bottom: 25px;
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
-}
-
-.filter-group {
-    display: flex;
-    flex-direction: column;
 }
 
 .filter-group label {
@@ -273,10 +262,6 @@ legend {
     transition: background-color 0.3s;
 }
 
-.filter-button:hover {
-    background-color: #e64a19;
-}
-
 .table-container {
     width: 100%;
     overflow-x: auto;
@@ -303,10 +288,6 @@ th {
 tbody tr {
     border-bottom: 1px solid #f0f0f0;
     transition: background-color 0.2s;
-}
-
-tbody tr:hover {
-    background-color: #fcfcfc;
 }
 
 td {
@@ -351,22 +332,168 @@ td {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-.action-button:hover {
-    background-color: #e0e0e0;
-    border-color: #aaa;
+/* ========================================= */
+/* ESTILOS PARA PERFIL (perfil.html) */
+/* ========================================= */
+
+.profile-card {
+    background-color: white;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    color: #333;
+    overflow: hidden;
 }
 
+.profile-header {
+    background-color: #e64a19;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    border: 4px solid #ff9800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #e64a19;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.profile-header-info h2 {
+    margin: 0 0 5px 0;
+    font-size: 24px;
+}
+
+.profile-header-info p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.profile-body {
+    padding: 30px;
+}
+
+.profile-body h3 {
+    color: #ff5722;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.profile-body .form-group input[disabled] {
+    background-color: #f4f4f4;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.profile-body .submit-button {
+    margin-top: 10px;
+    width: auto;
+    padding: 12px 30px;
+}
+
+/* ========================================= */
+/* ESTILOS PARA LOGIN (login.html) - ¡NUEVO! */
+/* ========================================= */
+
+/* El body de la página de login será diferente, ocupando todo el fondo */
+body.login-page-body {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-attachment: fixed; /* Mantiene el degradado fijo */
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.login-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.login-card h2 {
+    color: #ff5722;
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.login-card p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-options a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+.login-footer {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-footer a {
+    color: #ff5722;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-card .submit-button {
+    width: 100%;
+    margin-top: 0;
+}
 
 /* ========================================= */
 /* ESTILOS RESPONSIVOS (MEDIA QUERIES)       */
 /* ========================================= */
 
 @media (max-width: 768px) {
-    .app-container {
-        width: 100%;
+    body {
         margin: 0;
-        box-shadow: none;
-        border-radius: 0;
+        min-height: 100vh;
     }
     
     .content-area {
@@ -394,5 +521,10 @@ td {
         width: auto;
         height: auto;
         padding: 10px 20px;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
     }
 }
